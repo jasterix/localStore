@@ -6,25 +6,38 @@
 // key(): Passed a number to retrieve nth key of a localStorage
 
 const form = document.querySelector("form");
-const input = document.getElementById("item");
+const input = document.getElementById("input");
 const ul = document.querySelector("ul");
 
-let store = [];
+let store = ["hi"];
 
 const addItem = text => {
-  console.log(text);
   let newItem = document.createElement("li");
   newItem.innerText = text;
-  console.log(ul);
   ul.appendChild(newItem);
+  return `${text} added!`;
 };
 
 // form events
 form.addEventListener("submit", event => {
   event.preventDefault();
   store.push(input.value);
-  console.log(input.value);
+  localStorage.setItem("items", JSON.stringify(store));
   addItem(input.value);
   input.value = "";
 });
-// Test localStorage
+
+console.log(store.length);
+
+// Save to localStorage
+localStorage.setItem("items", store);
+
+// for (let i = 0; i < store.length; i++) {
+//   console.log(store[i]);
+// }
+
+store.forEach(item => {
+  console.log(item);
+  addItem(item);
+  console.log(store);
+});
