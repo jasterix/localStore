@@ -7,13 +7,24 @@
 
 const form = document.querySelector("form");
 const input = document.getElementById("item");
+const ul = document.querySelector("ul");
 
 let store = [];
+
+const addItem = text => {
+  console.log(text);
+  let newItem = document.createElement("li");
+  newItem.innerText = text;
+  console.log(ul);
+  ul.appendChild(newItem);
+};
+
+// form events
 form.addEventListener("submit", event => {
   event.preventDefault();
   store.push(input.value);
-  console.log(store, input);
+  console.log(input.value);
+  addItem(input.value);
   input.value = "";
 });
-
 // Test localStorage
