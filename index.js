@@ -13,6 +13,7 @@ form.addEventListener("submit", event => {
   event.preventDefault();
   store.push(input.value);
   console.log(store, input);
+  input.value = "";
 });
 
 // Test localStorage
