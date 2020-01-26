@@ -9,35 +9,23 @@ const form = document.querySelector("form");
 const input = document.getElementById("input");
 const ul = document.querySelector("ul");
 
-let store = ["hi"];
+let store = [];
 
 const addItem = text => {
   let newItem = document.createElement("li");
   newItem.innerText = text;
   ul.appendChild(newItem);
+  console.log(store);
   return `${text} added!`;
 };
 
 // form events
 form.addEventListener("submit", event => {
   event.preventDefault();
-  store.push(input.value);
+  store.push(input.value); //need for ls
+
+  // Save to localStorage
   localStorage.setItem("items", JSON.stringify(store));
   addItem(input.value);
   input.value = "";
-});
-
-console.log(store.length);
-
-// Save to localStorage
-localStorage.setItem("items", store);
-
-// for (let i = 0; i < store.length; i++) {
-//   console.log(store[i]);
-// }
-
-store.forEach(item => {
-  console.log(item);
-  addItem(item);
-  console.log(store);
 });
