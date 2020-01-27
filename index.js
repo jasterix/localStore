@@ -25,12 +25,9 @@ allItems.addEventListener("click", event => {
     // let text = event.target.parentElement.innerText.split(" ")[0];
     store.map(x => {
       // work around for remaining "'" record in store and localStorage. Only deletes in window
-      if (x === "" || x === "X") {
-        window.localStorage.setItem("items", store);
-      }
 
       // Remove item from store and local storage when deleted
-      if (`${x} X` === text || x === "X") {
+      if (`${x} X` === text) {
         console.log(store[store.indexOf(x)]);
         store.splice(store.indexOf(x), 1);
         location.reload();
@@ -64,16 +61,20 @@ const addItem = text => {
   makeLi(text);
 };
 
-// form events
+// form events. Add form input to store array
 form.addEventListener("submit", event => {
   event.preventDefault();
 
-  // Add form input to store array
+  // Check if input is not empty string
   let item = input.value;
-  store.push(item.trim());
+  if (item.length === 0) {
+    return "enter an item";
+  } else {
+    store.push(item.trim());
 
-  // Save to localStorage
-  window.localStorage.setItem("items", store);
-  addItem(input.value);
-  input.value = "";
+    // Save to localStorage
+    window.localStorage.setItem("items", store);
+    addItem(input.value);
+    input.value = "";
+  }
 });
