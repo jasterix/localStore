@@ -11,21 +11,56 @@ const ul = document.querySelector("ul");
 
 let store = [];
 
-const addItem = text => {
+// Clear localStorage / TO DO List
+clear.addEventListener("click", () => {
+  console.log(localStorage);
+  window.localStorage.clear();
+});
+
+// Delete to-do Item
+if (store.length > 1) {
+  del.addEventListener("click", () => {
+    console.log("click");
+  });
+} else {
+  null;
+}
+
+window.addEventListener("load", () => {
+  if (localStorage.getItem("items") === null) {
+    store = [];
+  } else {
+    let items = window.localStorage.getItem("items").split(",");
+    store = items;
+    return items.map(text => {
+      makeLi(text);
+    });
+  }
+});
+
+// Add new list item
+const makeLi = text => {
   let newItem = document.createElement("li");
   newItem.innerText = text;
-  ul.appendChild(newItem);
-  console.log(store);
-  return `${text} added!`;
+  newItem.innerHTML += newItem.innerHTML = `<button id="del">Delete</button>`;
+  ul.append(newItem);
+};
+
+const addItem = text => {
+  makeLi(text);
 };
 
 // form events
 form.addEventListener("submit", event => {
   event.preventDefault();
-  store.push(input.value); //need for ls
+
+  // Add form input to store array
+  let item = input.value;
+  store.unshift(item);
+  console.log(store);
 
   // Save to localStorage
-  localStorage.setItem("items", JSON.stringify(store));
+  window.localStorage.setItem("items", store);
   addItem(input.value);
   input.value = "";
 });
