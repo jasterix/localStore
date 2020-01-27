@@ -13,7 +13,6 @@ let store = [];
 
 // Clear localStorage / TO DO List
 clear.addEventListener("click", () => {
-  console.log(localStorage);
   window.localStorage.clear();
   location.reload();
 });
@@ -21,22 +20,22 @@ clear.addEventListener("click", () => {
 // Delete to-do Item
 allItems.addEventListener("click", event => {
   if (event.target.className == "del-btn") {
+    console.log(event.target.innerText);
     let text = event.target.parentElement.innerText;
     // let text = event.target.parentElement.innerText.split(" ")[0];
     store.map(x => {
-      if (x === "") {
-        event.target.parentElement.remove();
+      // work around for remaining "'" record in store and localStorage. Only deletes in window
+      if (x === "" || x === "X") {
+        window.localStorage.setItem("items", store);
       }
-      if (`${x} X` === text) {
-        console.log(x.length);
+
+      // Remove item from store and local storage when deleted
+      if (`${x} X` === text || x === "X") {
+        console.log(store[store.indexOf(x)]);
         store.splice(store.indexOf(x), 1);
         location.reload();
       }
     });
-    if (store.length === 0) {
-      window.localStorage.clear();
-      location.reload();
-    }
     window.localStorage.setItem("items", store);
   }
 });
@@ -57,7 +56,7 @@ window.addEventListener("load", () => {
 const makeLi = text => {
   let newItem = document.createElement("li");
   newItem.innerText = text;
-  newItem.innerHTML += ` <button class="del-btn" value="test">X</button>`;
+  newItem.innerHTML += ` <button class="del-btn">X</button>`;
   ul.append(newItem);
 };
 
