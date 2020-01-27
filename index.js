@@ -15,16 +15,31 @@ let store = [];
 clear.addEventListener("click", () => {
   console.log(localStorage);
   window.localStorage.clear();
+  location.reload();
 });
 
 // Delete to-do Item
-if (store.length > 1) {
-  del.addEventListener("click", () => {
-    console.log("click");
-  });
-} else {
-  null;
-}
+allItems.addEventListener("click", event => {
+  if (event.target.className == "del-btn") {
+    let text = event.target.parentElement.innerText;
+    // let text = event.target.parentElement.innerText.split(" ")[0];
+    store.map(x => {
+      if (x === "") {
+        event.target.parentElement.remove();
+      }
+      if (`${x} X` === text) {
+        console.log(x.length);
+        store.splice(store.indexOf(x), 1);
+        location.reload();
+      }
+    });
+    if (store.length === 0) {
+      window.localStorage.clear();
+      location.reload();
+    }
+    window.localStorage.setItem("items", store);
+  }
+});
 
 window.addEventListener("load", () => {
   if (localStorage.getItem("items") === null) {
@@ -42,7 +57,7 @@ window.addEventListener("load", () => {
 const makeLi = text => {
   let newItem = document.createElement("li");
   newItem.innerText = text;
-  newItem.innerHTML += newItem.innerHTML = `<button id="del">Delete</button>`;
+  newItem.innerHTML += ` <button class="del-btn" value="test">X</button>`;
   ul.append(newItem);
 };
 
@@ -56,8 +71,7 @@ form.addEventListener("submit", event => {
 
   // Add form input to store array
   let item = input.value;
-  store.unshift(item);
-  console.log(store);
+  store.push(item.trim());
 
   // Save to localStorage
   window.localStorage.setItem("items", store);
