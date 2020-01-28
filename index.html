@@ -5,14 +5,23 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css"
+    />
+    <script
+      defer
+      src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"
+    ></script>
+
     <title>Document</title>
   </head>
   <body>
-    <h1>localStorage To-Do List</h1>
-    <div id="todos">
+    <h1 class="title is-1">localStorage To-Do List</h1>
+    <div id="todos" class="field">
       <form id="addToDo">
-        <input id="input" type="text" placeholder="New" />
-        <input type="submit" value="Add" />
+        <input id="input" class="input" type="text" placeholder="New Item" />
+        <input type="submit" value="Add" class="button is-primary" />
       </form>
 
       <ul id="allItems"></ul>
