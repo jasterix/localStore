@@ -17,15 +17,26 @@
     <title>Document</title>
   </head>
   <body>
-    <h1 class="title is-1">localStorage To-Do List</h1>
-    <div id="todos" class="field">
-      <form id="addToDo">
-        <input id="input" class="input" type="text" placeholder="New Item" />
-        <input type="submit" value="Add" class="button is-primary" />
-      </form>
+    <div class="tasks">
+      <article class="panel is-primary">
+      <h1 class="panel-heading">localStorage To-Do List</h1>
+    </article>
+      <div id="todos" class="field">
+        <form id="addToDo">
+          <input id="input" class="input" type="text" placeholder="New Item" />
+          <input type="submit" value="Add to List" class="button is-primary" />
+          <div class="button is-danger">
+        
+            <button id="clear">Delete All Items</button>
+            
+          </div>
+        </form>
 
-      <ul id="allItems"></ul>
-      <button id="clear">Delete All Items</button>
+        <ul id="allItems">
+          <br>
+        </ul>
+        <br><br>
+
     </div>
     <script src="index.js"></script>
   </body>

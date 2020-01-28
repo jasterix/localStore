@@ -19,7 +19,7 @@ clear.addEventListener("click", () => {
 
 // Delete to-do Item
 allItems.addEventListener("click", event => {
-  if (event.target.className == "button is-info") {
+  if (event.target.className == "delete is-large") {
     console.log(event.target.innerText);
     let text = event.target.parentElement.innerText;
     // let text = event.target.parentElement.innerText.split(" ")[0];
@@ -53,8 +53,9 @@ window.addEventListener("load", () => {
 const makeLi = text => {
   let newItem = document.createElement("li");
   newItem.innerText = text;
-  newItem.innerHTML += ` <button class="button is-info">X</button>`;
+  newItem.innerHTML += `    <button class="delete is-large">X</button>`;
   ul.append(newItem);
+  newItem.className = "title is-4 is-upper-alpha is-success";
 };
 
 const addItem = text => {
