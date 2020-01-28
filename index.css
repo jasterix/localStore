@@ -1,0 +1,72 @@
+body {
+  background-image: url("https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/sts103-501-026orig.jpg");
+  background-size: 100%;
+  margin: 40px;
+  font-size: 25px;
+}
+
+.input.input {
+  max-width: 700px;
+}
+
+#todos {
+  margin: 20px;
+}
+div {
+  height: 900px;
+}
+
+.title.is-4 {
+  max-width: 700px;
+  color: white;
+}
+
+.is-large.delete {
+  background-color: black;
+}
+
+button#clear {
+  font-size: 25px;
+  color: black;
+  background-color: rgba(12, 23, 12, 0);
+  border: rgba(12, 23, 12, 0);
+}
+
+.tasks {
+  color: white;
+  max-width: 100%;
+  background-color: rgba(0, 0, 0, 0.3);
+  font-weight: bolder;
+}
+
+/* form input,
+button {
+  font-size: 20px;
+} */
+
+h1.title {
+  color: white;
+  font-weight: bolder;
+}
+
+.ex {
+  float: right;
+}
+
+div.button.is-danger {
+  width: 400px;
+}
+
+button#clear {
+  color: white;
+  font-weight: 600;
+}
+
+input.button.is-primary {
+  color: white;
+  font-weight: 600;
+  width: 200px;
+  font-size: 25px;
+  height: 40px;
+  padding: 0px 5px 0px 5px;
+}
