@@ -4,6 +4,17 @@ localStore uses the hosts localStorage, instead of a database or API to store us
 
 <img src="https://i.imgur.com/zf6P35O.png" width=800>
 
+## Clone the source locally
+
+##### $ `git clone https://github.com/thegoodgood/localStore.git`
+
+##### $ `cd localStore`
+
+##### $ `open index.html`
+
+## In the project directory, you can run:
+
+#### `npm install` – to install Bulma
 
 #### Features
 
@@ -13,3 +24,10 @@ localStore uses the hosts localStorage, instead of a database or API to store us
 - [ ] Edit todo items
 - [ ] Set due date
 - [ ] Randomize background
+
+## Languages / Frameworks
+- Vanilla JavaScript
+
+## License
+Copyright &copy;2020 Jasterix
+MIT License. See [LICENSE](LICENSE) for details.
