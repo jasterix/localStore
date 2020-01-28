@@ -69,14 +69,16 @@ form.addEventListener("submit", event => {
   // Check if input is not empty string
 
   let item = input.value;
-  if (item.length === 0) {
-    return "enter an item";
-  } else {
-    store.push(item.trim());
+  // if (item.length === 0) {
+  //   return "enter an item";
+  // } else {
+  //   store.push(item.trim());
 
-    // Save to localStorage
-    window.localStorage.setItem("items", store);
-    addItem(input.value);
-    input.value = "";
-  }
+  //   // Save to localStorage
+  //   window.localStorage.setItem("items", store);
+  //   addItem(input.value);
+  //   input.value = "";
+  // }
+  console.log(input.value);
+  module.exports = input;
 });
