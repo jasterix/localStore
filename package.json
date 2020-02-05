@@ -1,0 +1,26 @@
+{
+  "name": "localStore",
+  "version": "1.0.0",
+  "description": "localStore uses the hosts localStorage, instead of a database or API to store user data.",
+  "main": "index.js",
+  "dependencies": {
+    "bulma": "^0.8.0"
+  },
+  "devDependencies": {
+    "jest": "^25.1.0"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasterix/localStore.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasterix/localStore/issues"
+  },
+  "homepage": "https://github.com/jasterix/localStore#readme"
+}

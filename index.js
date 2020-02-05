@@ -63,22 +63,25 @@ const addItem = text => {
 };
 
 // form events. Add form input to store array
-form.addEventListener("submit", event => {
-  event.preventDefault();
+const getInput = () => {
+form.addEventListener( "submit", event => {
+  
+    event.preventDefault();
 
-  // Check if input is not empty string
+    // Check if input is not empty string
 
-  let item = input.value;
-  // if (item.length === 0) {
-  //   return "enter an item";
-  // } else {
-  //   store.push(item.trim());
+    let item = input.value;
+    // if (item.length === 0) {
+    //   return "enter an item";
+    // } else {
+    //   store.push(item.trim());
 
-  //   // Save to localStorage
-  //   window.localStorage.setItem("items", store);
-  //   addItem(input.value);
-  //   input.value = "";
-  // }
-  console.log(input.value);
+    //   // Save to localStorage
+    //   window.localStorage.setItem("items", store);
+    //   addItem(input.value);
+    //   input.value = "";
+    // }
+    console.log( input.value );
+  }
   module.exports = input;
 });

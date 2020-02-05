@@ -1,7 +1,7 @@
 body {
-  background-image: url("https://www.nasa.gov/sites/default/files/styles/full_width_feature/public/thumbnails/image/sts103-501-026orig.jpg");
+  background-image: url("./background.png");
   background-size: 100%;
-  margin: 40px;
+  /* margin: 40px; */
   font-size: 25px;
 }
 
@@ -13,7 +13,7 @@ body {
   margin: 20px;
 }
 div {
-  height: 900px;
+  height: 800px;
 }
 
 .title.is-4 {
