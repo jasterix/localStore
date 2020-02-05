@@ -14,7 +14,7 @@ localStore uses the hosts localStorage, instead of a database or API to store us
 
 ## In the project directory, you can run:
 
-#### `npm install` – to install Bulma
+#### `npm install` – to install the Bulma framework
 
 #### Features
 
