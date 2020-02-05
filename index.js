@@ -83,5 +83,5 @@ form.addEventListener( "submit", event => {
     // }
     console.log( input.value );
   }
-  module.exports = input;
+  
 });
